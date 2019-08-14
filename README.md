@@ -10,6 +10,16 @@ output: 21
 
 //21 = 6 + 5 + 4 + 3 + 2 + 1
 ```
+```swift
+func addUpTo(n: Int) -> Int {
+// Base Case
+if n == 0 { return 0 }
+// Recursive Call
+return n + addUpTo(n: n - 1)
+}
+
+addUpTo(n: 6)
+```
 
 
 - ### Multiply array
@@ -19,6 +29,19 @@ Write a function called `multArr` that takes in an array of numbers as an argume
 ```js
 multArr([2, 3, 5]); // returns 30
 multArr([5, 5, 1, 2]); //returns 50
+```
+
+```swift
+func multArr(arrNum: [Int]) -> Int {
+//Base case
+var array = arrNum
+if array.count == 1 { return array[0] }
+
+//Recursive Call
+return array.popLast()! * multArr(arrNum: array)
+}
+
+multArr(arrNum: [5, 5, 1, 2])
 ```
 
 - ### Concatenate array
