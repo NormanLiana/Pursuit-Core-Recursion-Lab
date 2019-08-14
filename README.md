@@ -52,6 +52,19 @@ Write a function called `concatArr` that takes in an array of strings as an argu
 concatArr(['is', 'it', 'tomorrow']); // returns 'is it tomorrow'
 concatArr(['or', 'just', 'the', 'end', 'of', 'time']); //returns 'or just the end of time'
 ```
+```swift
+func concatArr(_ arr: [String]) -> String {
+//base case
+if arr.count == 1 { return arr[0] }
+
+//recursive call
+let firstWord = arr[0]
+let remainingWords = Array(arr[1...])
+return firstWord + " " + concatArr(remainingWords)
+}
+print(concatArr(["or", "just", "the", "end", "of", "time"]))
+print(concatArr(["is", "it", "tomorrow"]))
+```
 
 - ### Sum evens
 
