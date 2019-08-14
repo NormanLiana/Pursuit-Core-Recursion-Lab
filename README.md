@@ -74,6 +74,25 @@ Write a function called `sumEvens` that takes in an array of numbers as an argum
 sumEvens([2, 3, 5, 6]); // returns 8
 sumEvens([10, 5, 1, 2, 12]); //returns 24
 ```
+```swift
+func sumEvens(_ arr: [Int]) -> Int {
+//base case
+print(arr)
+if arr.count == 1 {
+if arr[0] % 2 == 0 { return arr[0] }
+}
+//recursive call
+let firstNum = arr[0]
+var evenNum = Int()
+if firstNum % 2 == 0 {
+evenNum = firstNum
+}
+let remainingNums = Array(arr[1...])
+return evenNum + sumEvens(remainingNums)
+}
+print(sumEvens([2, 3, 5, 6]))
+print(sumEvens([10, 5, 1, 2, 12]))
+```
 
 - ### Recursive range
 
@@ -82,6 +101,17 @@ Write a function called `range` which takes in two numbers (num1, num2) as argum
 ```js
 range(2,10); // returns [2, 3, 4, 5, 6,7, 8, 9, 10]
 range(17,20); // returns [17, 18, 19, 20]
+```
+```swift
+func range (num1: Int, num2: Int) -> [Int] {
+//Base case
+if num1 == num2 { return [num2] }
+//Recursive Call
+return  [num1] + range(num1: num1 + 1, num2: num2)
+
+}
+range(num1: 17, num2: 20)
+range(num1: 2, num2: 10)
 ```
 
 
